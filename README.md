@@ -8,16 +8,16 @@ El objetivo del proyecto original es implementar un sistema que permita a los us
 
 ## Tabla de contenidos
 
-1. [Prácticas de *clean code*](#practicas-de-clean-code)
-    - [Variables, funciones y métodos](#variables-funciones-y-metodos)
+1. [Prácticas de *clean code*](#prácticas-de-clean-code)
+    - [Variables, funciones y métodos](#variables-funciones-y-métodos)
     - [Clases](#clases)
     - [Nombres descriptivos](#nombres-descriptivos)
 2. [SOLID](#solid)
-    - [Principio de única responsabilidad](#1-principio-de-unica-responsabilidad)
-    - [Principio de apertura/cierre](#2-principio-de-apertura-cierre)
+    - [Principio de única responsabilidad](#1-principio-de-única-responsabilidad)
+    - [Principio de apertura/cierre](#2-principio-de-aperturacierre)
 3. [Estilos](#estilos)
-    - [Manejo de errores/excepciones](#manejo-de-errores-excepciones-constructivista)
-    - [Tablas de persistencia](#tablas-de-pertinencia)
+    - [Manejo de errores/excepciones](#manejo-de-erroresexcepciones-constructivista)
+    - [Tablas de persistencia](#tablas-de-persistencia)
     - [Trinity (MVC)](#trinity-mvc)
 4. [Uso](#uso)
 5. [Autor](#autor)
