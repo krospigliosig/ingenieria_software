@@ -6,6 +6,62 @@ Fork del [Sistema de elecciones online](https://github.com/Kiw1i/ingenieria_soft
 
 El objetivo del proyecto original es implementar un sistema que permita a los usuarios programar elecciones para la fecha deseada, entre los candidatos inidicados y para los electores a quienes compete. Este fork implementa la parte de los repositorios al módulo `proceso_electoral` y conexiones a base de datos del sistema, así como modelos de flujo de información entre las diversas capas.
 
+## Tabla de contenidos
+
+1. [Prácticas de *clean code*](#practicas-de-clean-code)
+    - [Variables, funciones y métodos](#variables-funciones-y-metodos)
+    - [Clases](#clases)
+    - [Nombres descriptivos](#nombres-descriptivos)
+2. [SOLID](#solid)
+    - [Principio de única responsabilidad](#1-principio-de-unica-responsabilidad)
+    - [Principio de apertura/cierre](#2-principio-de-apertura-cierre)
+3. [Estilos](#estilos)
+    - [Manejo de errores/excepciones](#manejo-de-errores-excepciones-constructivista)
+    - [Tablas de persistencia](#tablas-de-pertinencia)
+    - [Trinity (MVC)](#trinity-mvc)
+4. [Uso](#uso)
+5. [Autor](#autor)
+
+## Prácticas de *clean code*
+
+### Variables, funciones y métodos
+
+Según el PEP8; variables, funciones y métodos deben seguir la convención lower_snake_case.
+
+```python
+    def eliminar_eleccion(eleccion):
+        try:
+            entrada = db.session.query(EleccionModelo).filter_by(codigo = eleccion.codigo).one()
+            db.session.delete(entrada)
+            db.session.commit
+        except:
+            db.session.rollback()
+            raise
+        finally:
+            db.session.close()
+```
+
+### Clases
+
+Según el PEP8, las clases deben seguir la convención UpperCamelCase.
+
+```python
+class AdministradorEleccionRepositorioImpl:
+    ...
+```
+
+### Nombres descriptivos
+
+Es una buena práctica declarar nombres que den un entendimiento más claro del propósito del objeto.
+
+```python
+    codigo = db.Column(db.Integer, primary_key=True)
+    tipo_eleccion = db.Column(db.Text)
+    fecha_inicio = db.Column(db.DateTime)
+    fecha_cierre = db.Column(db.DateTime)
+    lista_candidatos = db.Columnd(db.Text)
+```
+
 ## SOLID
 
 El programa cumple con principios SOLID.
